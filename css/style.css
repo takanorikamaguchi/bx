@@ -1,0 +1,230 @@
+@charset "UTF-8";
+@font-face {
+  font-family: YuGothicM;
+  src: local("Yu Gothic Medium");
+}
+
+html,body {
+  background-color: #fff;
+  font-feature-settings: palt;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body{
+  font-size: 10px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+section h1 {
+  -webkit-font-feature-settings: "palt" 1;
+  font-feature-settings: "palt" 1;
+}
+
+.section-topcontents {
+  -webkit-box-pack: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 700px;
+}
+
+.slider-wrap {
+  width: 70%;
+  overflow: hidden;
+}
+
+.bx-wrapper .bx-pager {
+  bottom: 10px;
+  display: inline-block;
+  padding: 5px;
+  right: 10px;
+  width: auto;
+  z-index: 51;
+}
+.bx-wrapper {
+  border: none;
+  overflow: hidden;
+}
+.bx-wrapper::before {
+  background-color: rgba(255, 69, 0, .5);
+  border-radius: 50%;
+  content: "";
+  height: 200px;
+  left: -100px;
+  position: absolute;
+  top: -100px;
+  width: 200px;
+  z-index: 10;
+}
+
+.bx-wrapper::after {
+  background-color: rgba(255, 69, 0, .5);
+  border-radius: 50%;
+  bottom: -100px;
+  content: "";
+  height: 200px;
+  position: absolute;
+  right: -100px;
+  width: 200px;
+  z-index: 10;
+}
+.slider-item-img {
+  max-width: 100%;
+}
+.slider-itemtxt{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.subcontents {
+  width: 30%;
+  display: flex;
+}
+.subcontents-list{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.subcontents-item {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  line-height: 1.4;
+  align-items: stretch;
+}
+
+.list-link {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  color: #fff;
+  display: table;
+  padding: 5%;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+.subcontents-item:nth-child(1) {
+  background-color: #dc143c;
+}
+
+.subcontents-item:nth-child(1)::after,
+.subcontents-item:nth-child(3)::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 100px;
+  left: -50px;
+  position: absolute;
+  top: -50px;
+  width: 100px;
+}
+
+.subcontents-item:nth-child(2)::after {
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: -50px;
+  content: "";
+  height: 100px;
+  position: absolute;
+  right: -50px;
+  width: 100px;
+}
+
+.subcontents-item:nth-child(2) {
+  background-color: #0000cd;
+}
+
+.subcontents-item:nth-child(3) {
+  background-color: #ffd700;
+}
+
+.subcontents-item-btn {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  -webkit-transition: .5s;
+  transition: .5s;
+  height:  100%;
+  color: #ffffff;
+  font-size: 1.6rem;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.list-link:hover .subcontents-item-btn {
+  -webkit-box-shadow: 0 0 5px transparent;
+  box-shadow: 0 0 5px transparent;
+}
+
+.subcontents-item-btn-sub {
+  color: #ccc;
+  display: block;
+  font-size: 1.3rem;
+}
+.scroll-content{
+padding: 600px 0 600px 0;
+}
+
+@media screen and (min-width: 1280px) {
+  .slider-wrap {
+    width: 70%;
+    -ms-flex-preferred-size: 70%;
+    overflow: hidden;
+  }
+  .subcontents {
+    width: 30%;
+    -ms-flex-preferred-size: 30%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .slider-wrap {
+    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    overflow: hidden;
+  }
+  .subcontents {
+    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+  }
+.subcontents-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.subcontents-item{
+  width: 33.33%;
+  height: auto !important;
+}
+.subcontents-item-btn{
+  padding: 10%;
+}
+}
+
+@media screen and (max-width: 500px) {
+.subcontents-item{
+  width: 100%;
+  height: auto;
+}
+.subcontents-item-btn{
+  padding: 5%;
+}
+}
