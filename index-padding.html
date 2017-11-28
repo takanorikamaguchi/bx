@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>bx test</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="reset.css" rel="stylesheet" type="text/css">
+    <link href="jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <link href="style-padding.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="body">
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+    <section>
+        <h1>bx test</h1>
+    </section>
+    <p>test</p>
+    <section class="section-topcontents">
+        <div class="slider-wrap">
+            <div class="slider">
+                <div class="slider-item"><img src="img/test01.jpg" alt="testimg" class="slider-item-img"><div class="slider-itemtxt">Just do it<time datetime="2011-01-12">January 12th, 2011</time></div></div>
+                <div class="slider-item"><img src="img/test02.jpg" alt="testimg" class="slider-item-img"><div class="slider-itemtxt">Just do it<time datetime="2011-01-12">January 12th, 2011</time></div></div>
+            </div>
+        </div>
+        <div class="subcontents">
+            <ul class="subcontents-list">
+            	<li class="subcontents-item"><a href="#" class="list-link"><div class="subcontents-item-btn">HHHHH<span class="subcontents-item-btn-sub">list1</span></div></a></li>
+			    <li class="subcontents-item"><a href="#" class="list-link"><div class="subcontents-item-btn">HHHHH<span class="subcontents-item-btn-sub">list2</span></div></a></li>
+			    <li class="subcontents-item"><a href="#" class="list-link"><div class="subcontents-item-btn"><time datetime="2017-01-12" class="subcontents-item-btn-date">2017年12月12日</time><br>HHHHH<span class="subcontents-item-btn-sub">list3</span></div></a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="scroll-content">
+    <h2>next</h2>
+    <div id="top" class="top-btn">top</div>
+    </div>
+        <script>
+        $(function() {
+            $('.slider').bxSlider({
+                 auto: true,
+            });
+       var top = document.getElementById('top');
+       $(top).on("click", function(){
+    $("body, html").animate({
+scrollTop:0
+    }, 2000);
+        });
+              });
+        </script>
+</body>
+
+</html>
