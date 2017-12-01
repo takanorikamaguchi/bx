@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>bx test</title>
@@ -12,8 +13,8 @@
 </head>
 
 <body class="body">
-<script src="js/jquery-1.9.1.js"></script>
-<script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
     <section>
         <h1>bx test</h1>
     </section>
@@ -21,35 +22,105 @@
     <section class="section-topcontents">
         <div class="slider-wrap">
             <div class="slider">
-                <div class="slider-item"><img src="img/test01.jpg" alt="testimg" class="slider-item-img"><div class="slider-itemtxt">Just do it<time datetime="2011-01-12">January 12th, 2011</time></div></div>
-                <div class="slider-item"><img src="img/test02.jpg" alt="testimg" class="slider-item-img"><div class="slider-itemtxt">Just do it<time datetime="2011-01-12">January 12th, 2011</time></div></div>
+                <div class="slider-item"><img src="img/test-pc-01.jpg" alt="testimg" class="slider-item-img">
+                    <div class="slider-itemtxt">Just do it
+                        <time datetime="2011-01-12">January 12th, 2011</time>
+                    </div>
+                </div>
+                <div class="slider-item"><img src="img/test-pc-02.jpg" alt="testimg" class="slider-item-img">
+                    <div class="slider-itemtxt">Just do it
+                        <time datetime="2011-01-12">January 12th, 2011</time>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="subcontents">
             <ul class="subcontents-list">
-            	<li class="subcontents-item"><a href="#" class="list-link"><div class="subcontents-item-btn">HHHHH<span class="subcontents-item-btn-sub">list1</span></div></a></li>
-			    <li class="subcontents-item"><a href="#" class="list-link"><div class="subcontents-item-btn">HHHHH<span class="subcontents-item-btn-sub">list2</span></div></a></li>
-			    <li class="subcontents-item"><a href="#" class="list-link"><div class="subcontents-item-btn"><time datetime="2017-01-12" class="subcontents-item-btn-date">2017年12月12日</time><br>HHHHH<span class="subcontents-item-btn-sub">list3</span></div></a></li>
+                <li class="subcontents-item">
+                    <a href="#" class="list-link">
+                        <div class="subcontents-item-btn">HHHHH<span class="subcontents-item-btn-sub">list1</span></div>
+                    </a>
+                </li>
+                <li class="subcontents-item">
+                    <a href="#" class="list-link">
+                        <div class="subcontents-item-btn">HHHHH<span class="subcontents-item-btn-sub">list2</span></div>
+                    </a>
+                </li>
+                <li class="subcontents-item">
+                    <a href="#" class="list-link">
+                        <div class="subcontents-item-btn">
+                            <time datetime="2017-01-12" class="subcontents-item-btn-date">2017年12月12日</time>
+                            <br>HHHHH<span class="subcontents-item-btn-sub">list3</span></div>
+                    </a>
+                </li>
             </ul>
         </div>
     </section>
     <div class="scroll-content">
-    <h2>next</h2>
-    <div id="top" class="top-btn">top</div>
+        <h2>next</h2>
+        <div id="top" class="top-btn">top</div>
     </div>
-        <script>
-        $(function() {
-            $('.slider').bxSlider({
-                 auto: true,
-            });
-       var top = document.getElementById('top');
-       $(top).on("click", function(){
-    $("body, html").animate({
-scrollTop:0
-    }, 2000);
+    <script>
+    $(function() {
+        $('.slider').bxSlider({
+            auto: true,
         });
-              });
-        </script>
+        var top = document.getElementById('top');
+        $(top).on("click", function() {
+            $("body, html").animate({
+                scrollTop: 0
+            }, 2000);
+        });
+    });
+
+// $(window).on("resize load", function(){
+//             var windowwidth = $(window).width();
+//             var spwidth = 480;
+//             if(windowwidth < spwidth){
+//                 var be = "pc-", af = "sp-";
+//                 imgResize();
+//             }else{
+//                 var be = "sp-", af = "pc-";
+//                 imgResize();
+//             }
+// function imgResize(){
+//     var $ppp = $("slider-item-img[src*=pc],slider-item-img[src*=sp]");
+//     $ppp.each(function() {
+//         var chageimg = $(".slider-item-img").attr("src").replace(be,af);
+//         console.log(chageimg);
+//     var $this = $(this);
+//        if( $(this).attr("src").match(be) ){
+//         $this.attr("src", chageimg);
+//       }
+//     });
+
+// }});
+
+$(function () {
+ var elem = $('.slider-item-img');
+ var sp = 'sp';
+ var pc = 'pc';
+ var replaceWidth = 480;
+ function imageSwitch() {
+ var windowWidth = parseInt($(window).width());
+ elem.each(function () {
+ var $this = $(this);
+ if (windowWidth >= replaceWidth) {
+ $this.attr('src', $this.attr('src').replace(sp, pc));
+ } else {
+ $this.attr('src', $this.attr('src').replace(pc, sp));
+ }
+ });
+ }
+ imageSwitch();
+ 
+ //ディレイ設定(リサイズの実行タイミングを遅延させる)
+ $(window).on('resize', function () {
+ imageSwitch();
+ });
+});
+
+    </script>
 </body>
 
 </html>
